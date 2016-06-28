@@ -1,0 +1,66 @@
+﻿@model AccesoDatos.producto
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>producto</h4>
+    	<hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.almacen.direccion)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.almacen.direccion)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.categoria.tipo_categoria)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.categoria.tipo_categoria)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.nombre)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.nombre)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.precio)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.precio)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.descripcion)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.descripcion)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.id_producto }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

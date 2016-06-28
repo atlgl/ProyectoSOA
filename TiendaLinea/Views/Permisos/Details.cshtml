@@ -1,0 +1,74 @@
+﻿@model AccesoDatos.permisos
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>permisos</h4>
+    	<hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.modulos.nombremodulo)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.modulos.nombremodulo)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.roles.rol)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.roles.rol)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.escritura)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.escritura)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.lectura)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.lectura)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.modificar)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.modificar)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.eliminar)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.eliminar)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.id_permiso }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

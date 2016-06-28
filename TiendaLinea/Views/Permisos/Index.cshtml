@@ -1,0 +1,71 @@
+﻿@model IEnumerable<AccesoDatos.permisos>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.modulos.nombremodulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.roles.rol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.escritura)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.lectura)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.modificar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.eliminar)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.modulos.nombremodulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.roles.rol)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.escritura)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lectura)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.modificar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.eliminar)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.id_permiso }) |
+                @Html.ActionLink("Details", "Details", new { id=item.id_permiso }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.id_permiso })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>
