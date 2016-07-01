@@ -20,6 +20,11 @@ namespace WSTiendaLineaSOAP
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: Add your service operations here
+        [OperationContract]
+        List<Permisos> getPermisos();
+
+        [OperationContract]
+        List<Categoria> getCategorias();
     }
 
 
@@ -43,5 +48,6 @@ namespace WSTiendaLineaSOAP
             get { return stringValue; }
             set { stringValue = value; }
         }
+
     }
 }
