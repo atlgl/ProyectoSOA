@@ -5,6 +5,8 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace WSTiendaLineaSOAP
 {
@@ -28,6 +30,27 @@ namespace WSTiendaLineaSOAP
                 composite.StringValue += "Suffix";
             }
             return composite;
+        }
+
+        public List<Roles> getRoles()
+        {
+            List<Roles> roles = new List<Roles>();
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ModeloTiendaLinea"].ConnectionString);
+            SqlCommand cmd = new SqlCommand("SELECT id_rol,rol,descripcion FROM roles",con);
+            con.Open();
+            SqlDataReader rd = cmd.ExecuteReader();
+            while (rd.Read())
+            {
+                Roles r = new Roles();
+                r.id_rol = (Int32)rd["id_rol"];
+                r.rol = (String)rd["rol"];
+                r.descripcion = String.IsNullOrEmpty(rd.GetString(2)) ? "": rd.GetString(2);
+                    ;
+                roles.Add(r);
+            }
+            rd.Close();
+            con.Close();
+            return roles;
         }
     }
 }
