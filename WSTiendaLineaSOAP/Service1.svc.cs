@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
-using System.Data.SqlClient;
-using System.Configuration;
 
 namespace WSTiendaLineaSOAP
 {
@@ -14,8 +14,6 @@ namespace WSTiendaLineaSOAP
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
-       
-
         public string GetData(int value)
         {
             return string.Format("You entered: {0}", value);
@@ -34,41 +32,46 @@ namespace WSTiendaLineaSOAP
             return composite;
         }
 
-        public List<Roles> getRoles()
+        public List<Permisos> getPermisos()
         {
-            List<Roles> roles = new List<Roles>();
-            SqlConnection con = new SqlConnection(
-                ConfigurationManager.ConnectionStrings["ModeloTiendaLinea"].ConnectionString);
-            SqlCommand cmd = new SqlCommand("SELECT id_rol,rol,descripcion FROM roles",con);
+            List<Permisos> permisos = new List<Permisos>();
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ModeloTiendaLinea"].ConnectionString);
+            SqlCommand cmd = new SqlCommand("SELECT id_permiso,id_rol,id_modulo,escritura,lectura,modificar,eliminar");
             con.Open();
             SqlDataReader rd = cmd.ExecuteReader();
             while (rd.Read())
             {
-                Roles r = new Roles();
-                r.id_rol = (Int32)rd["id_rol"];
-                r.rol = (String)rd["rol"];
-                r.descripcion = DBNull.Value.Equals(rd.GetString(2)) ? "": rd.GetString(2);
-                roles.Add(r);
+                Permisos p = new Permisos();
+                p.id_permiso = (Int32)rd["id_permiso"];
+                p.id_rol = (Int32)rd["id_rol"];
+                p.id_modulo = (Int32)rd["id_modulo"];
+                p.escritura = (bool)rd["escritura"]
+                p.lectura = (bool)rd["lectura"];
+                p.modificar = (bool)rd["modificar"];
+                p.eliminar = (bool)rd["eliminar"];
+                permisos.Add(p);
             }
             rd.Close();
             con.Close();
-            return roles;
+            return permisos;
         }
 
-
-        public void createRoles(Roles rol)
+        List<Categoria> getCategorias()
         {
-            SqlConnection con = new SqlConnection(
-               ConfigurationManager.ConnectionStrings["ModeloTiendaLinea"].ConnectionString);
-            SqlCommand cmd = new SqlCommand("INSERT INTO roles (rol,descripcion) VALUES('"+
-                rol.rol+"','"+
-                rol.descripcion+"')", con);
-            
+            List<Categoria> categorias = new List<Categoria>();
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ModeloTiendaLinea"].ConnectionString);
+            SqlCommand cmd = new SqlCommand("SELECT id_permiso,id_rol,id_modulo,escritura,lectura,modificar,eliminar");
             con.Open();
-            cmd.ExecuteNonQuery();
-
+            SqlDataReader rd = cmd.ExecuteReader();
+            while (rd.Read())
+            {
+                Categoria c = new Categoria();
+                c.id_categoria = (Int32)rd["id_categoria"];
+                c.tipo_categoria= (String)rd["tipo_categoria"];
+            }
+            rd.Close();
+            con.Close();
+            return categorias;
         }
-
-
     }
 }

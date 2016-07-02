@@ -21,12 +21,10 @@ namespace WSTiendaLineaSOAP
 
         // TODO: Add your service operations here
         [OperationContract]
-        List<Roles> getRoles();
+        List<Permisos> getPermisos();
 
         [OperationContract]
-        void createRoles(Roles rol);
-        
-
+        List<Categoria> getCategorias();
     }
 
 
@@ -50,5 +48,6 @@ namespace WSTiendaLineaSOAP
             get { return stringValue; }
             set { stringValue = value; }
         }
+
     }
 }
