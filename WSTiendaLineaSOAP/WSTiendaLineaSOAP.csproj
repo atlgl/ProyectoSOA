@@ -96,6 +96,7 @@
   <ItemGroup>
     <Compile Include="Categoria.cs" />
     <Compile Include="Permisos.cs" />
+    <Compile Include="Roles.cs" />
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>
