@@ -20,6 +20,13 @@ namespace WSTiendaLineaSOAP
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: Add your service operations here
+        [OperationContract]
+        List<Roles> getRoles();
+
+        [OperationContract]
+        void createRoles(Roles rol);
+        
+
     }
 
 

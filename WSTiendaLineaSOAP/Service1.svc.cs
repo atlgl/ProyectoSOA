@@ -14,6 +14,8 @@ namespace WSTiendaLineaSOAP
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
+       
+
         public string GetData(int value)
         {
             return string.Format("You entered: {0}", value);
@@ -35,7 +37,8 @@ namespace WSTiendaLineaSOAP
         public List<Roles> getRoles()
         {
             List<Roles> roles = new List<Roles>();
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ModeloTiendaLinea"].ConnectionString);
+            SqlConnection con = new SqlConnection(
+                ConfigurationManager.ConnectionStrings["ModeloTiendaLinea"].ConnectionString);
             SqlCommand cmd = new SqlCommand("SELECT id_rol,rol,descripcion FROM roles",con);
             con.Open();
             SqlDataReader rd = cmd.ExecuteReader();
@@ -44,13 +47,28 @@ namespace WSTiendaLineaSOAP
                 Roles r = new Roles();
                 r.id_rol = (Int32)rd["id_rol"];
                 r.rol = (String)rd["rol"];
-                r.descripcion = String.IsNullOrEmpty(rd.GetString(2)) ? "": rd.GetString(2);
-                    ;
+                r.descripcion = DBNull.Value.Equals(rd.GetString(2)) ? "": rd.GetString(2);
                 roles.Add(r);
             }
             rd.Close();
             con.Close();
             return roles;
         }
+
+
+        public void createRoles(Roles rol)
+        {
+            SqlConnection con = new SqlConnection(
+               ConfigurationManager.ConnectionStrings["ModeloTiendaLinea"].ConnectionString);
+            SqlCommand cmd = new SqlCommand("INSERT INTO roles (rol,descripcion) VALUES('"+
+                rol.rol+"','"+
+                rol.descripcion+"')", con);
+            
+            con.Open();
+            cmd.ExecuteNonQuery();
+
+        }
+
+
     }
 }
