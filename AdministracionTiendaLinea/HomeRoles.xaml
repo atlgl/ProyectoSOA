@@ -1,0 +1,20 @@
+﻿<Window x:Class="AdministracionTiendaLinea.HomeRoles"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AdministracionTiendaLinea"
+        mc:Ignorable="d"
+        Title="HomeRoles" Height="540.925" Width="666.01">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="211*"/>
+            <RowDefinition Height="59*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="btnAgregar" Content="Agregar" HorizontalAlignment="Left" Margin="36,43.8,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnEliminar" Content="Eliminar" HorizontalAlignment="Left" Margin="151,43.8,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnEditar" Content="Editar" HorizontalAlignment="Left" Margin="263,43.8,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnActulizar" Content="Actualizar" HorizontalAlignment="Left" Margin="377,43.8,0,0" Grid.Row="1" VerticalAlignment="Top" Width="75"/>
+        <DataGrid x:Name="dgRoles" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="379" Width="640"/>
+    </Grid>
+</Window>

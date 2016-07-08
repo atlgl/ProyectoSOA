@@ -1,8 +1,8 @@
-﻿<Application x:Class="AdministracionTiendaLinea.App"
+﻿<Application x:Class="TiendaAdmin.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:AdministracionTiendaLinea"
-             StartupUri="HomeRoles.xaml">
+             xmlns:local="clr-namespace:TiendaAdmin"
+             StartupUri="MainWindow.xaml">
     <Application.Resources>
          
     </Application.Resources>
