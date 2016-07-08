@@ -108,6 +108,12 @@ namespace AdministracionTiendaenLinea
             btnEditar.IsEnabled = false;
         }
 
+
+        /// <summary>
+        /// Ejemplo de como guardar la imagen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnimage_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -151,7 +157,11 @@ namespace AdministracionTiendaenLinea
                 return image;
             }
         }
-
+        /// <summary>
+        /// Ejemplo de como mostrar la imagen en el formulario
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnimage_Copy_Click(object sender, RoutedEventArgs e)
         {
             AccesoDatos.clientes c = db.clientes.Find(3);
