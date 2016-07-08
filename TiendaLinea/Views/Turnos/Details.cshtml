@@ -1,0 +1,26 @@
+﻿@model AccesoDatos.turno
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>turno</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.tipo_turno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipo_turno)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id_turno }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
