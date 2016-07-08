@@ -23,7 +23,10 @@ namespace AccesoDatos
         public string rol { get; set; }
 
         [StringLength(250)]
-        public string descripcion { get; set; }
+        public string descripcion { get; set; } 
+
+        [Required]
+        public bool? activado { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<permisos> permisos { get; set; }

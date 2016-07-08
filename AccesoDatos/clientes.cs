@@ -32,6 +32,8 @@ namespace AccesoDatos
 
         public int id_usuario { get; set; }
 
+        public byte[] imagen { get; set; }
+
         public virtual usuarios usuarios { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -39,5 +41,6 @@ namespace AccesoDatos
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<lista_deseos> lista_deseos { get; set; }
+
     }
 }
