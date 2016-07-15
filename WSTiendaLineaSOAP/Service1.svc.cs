@@ -73,5 +73,16 @@ namespace WSTiendaLineaSOAP
             con.Close();
             return categorias;
         }
+
+        public void createPermisos(Permisos per)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ModeloTiendaLinea"].ConnectionString);
+            SqlCommand cmd = new SqlCommand();
+        }
+
+        List<Categoria> IService1.getCategorias()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
