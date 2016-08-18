@@ -41,6 +41,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -63,6 +64,7 @@
     <Compile Include="ModeloTiendaLinea.cs" />
     <Compile Include="modulos.cs" />
     <Compile Include="ofertas.cs" />
+    <Compile Include="ImageEntity.cs" />
     <Compile Include="pagos.cs" />
     <Compile Include="pedidos.cs" />
     <Compile Include="permisos.cs" />

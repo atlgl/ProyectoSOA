@@ -45,7 +45,7 @@ namespace WSTiendaLineaSOAP
                 p.id_permiso = (Int32)rd["id_permiso"];
                 p.id_rol = (Int32)rd["id_rol"];
                 p.id_modulo = (Int32)rd["id_modulo"];
-                p.escritura = (bool)rd["escritura"]
+                p.escritura = (bool)rd["escritura"];
                 p.lectura = (bool)rd["lectura"];
                 p.modificar = (bool)rd["modificar"];
                 p.eliminar = (bool)rd["eliminar"];
@@ -54,6 +54,11 @@ namespace WSTiendaLineaSOAP
             rd.Close();
             con.Close();
             return permisos;
+        }
+
+        List<Categoria> IService1.getCategorias()
+        {
+            throw new NotImplementedException();
         }
 
         List<Categoria> getCategorias()

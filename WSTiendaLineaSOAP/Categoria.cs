@@ -8,6 +8,6 @@ namespace WSTiendaLineaSOAP
         [DataMember]
         public int id_categoria { get; set; }
         [DataMember]
-        public string tipo_categoria { get; set}
+        public string tipo_categoria { get; set; }
     }
 }
